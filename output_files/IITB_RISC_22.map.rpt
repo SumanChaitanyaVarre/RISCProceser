@@ -1,0 +1,741 @@
+Analysis & Synthesis report for IITB_RISC_22
+Sat May 07 21:42:21 2022
+Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |IITB_RISC_22|FSM:FSM_R|fsm_state_symbol
+  9. Registers Removed During Synthesis
+ 10. Removed Registers Triggering Further Register Optimizations
+ 11. General Register Statistics
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Port Connectivity Checks: "FSM:FSM_R"
+ 14. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++---------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                              ;
++-----------------------------+---------------------------------------------+
+; Analysis & Synthesis Status ; Successful - Sat May 07 21:42:21 2022       ;
+; Quartus Prime Version       ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
+; Revision Name               ; IITB_RISC_22                                ;
+; Top-level Entity Name       ; IITB_RISC_22                                ;
+; Family                      ; MAX V                                       ;
+; Total logic elements        ; 495                                         ;
+; Total pins                  ; 165                                         ;
+; Total virtual pins          ; 0                                           ;
+; UFM blocks                  ; 0 / 1 ( 0 % )                               ;
++-----------------------------+---------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Top-level entity name                                            ; IITB_RISC_22       ; IITB_RISC_22       ;
+; Family name                                                      ; MAX V              ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                         ;
++----------------------------------+-----------------+-----------------+---------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                  ; Library ;
++----------------------------------+-----------------+-----------------+---------------------------------------------------------------+---------+
+; Memory.vhd                       ; yes             ; User VHDL File  ; D:/DLDCA/updated/cs230_project/cs230_project/Memory.vhd       ;         ;
+; RegisterFile.vhd                 ; yes             ; User VHDL File  ; D:/DLDCA/updated/cs230_project/cs230_project/RegisterFile.vhd ;         ;
+; ALU.vhd                          ; yes             ; User VHDL File  ; D:/DLDCA/updated/cs230_project/cs230_project/ALU.vhd          ;         ;
+; FSM.vhd                          ; yes             ; User VHDL File  ; D:/DLDCA/updated/cs230_project/cs230_project/FSM.vhd          ;         ;
+; IITB_RISC_22.vhd                 ; yes             ; User VHDL File  ; D:/DLDCA/updated/cs230_project/cs230_project/IITB_RISC_22.vhd ;         ;
+; Register_16.vhd                  ; yes             ; User VHDL File  ; D:/DLDCA/updated/cs230_project/cs230_project/Register_16.vhd  ;         ;
+; Register_1.vhd                   ; yes             ; User VHDL File  ; D:/DLDCA/updated/cs230_project/cs230_project/Register_1.vhd   ;         ;
+; iptoop.vhd                       ; yes             ; User VHDL File  ; D:/DLDCA/updated/cs230_project/cs230_project/iptoop.vhd       ;         ;
+; TestBench.vhd                    ; yes             ; User VHDL File  ; D:/DLDCA/updated/cs230_project/cs230_project/TestBench.vhd    ;         ;
+; mux.vhd                          ; yes             ; User VHDL File  ; D:/DLDCA/updated/cs230_project/cs230_project/mux.vhd          ;         ;
++----------------------------------+-----------------+-----------------+---------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Total logic elements                        ; 495   ;
+;     -- Combinational with no register       ; 281   ;
+;     -- Register only                        ; 167   ;
+;     -- Combinational with a register        ; 47    ;
+;                                             ;       ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 213   ;
+;     -- 3 input functions                    ; 100   ;
+;     -- 2 input functions                    ; 14    ;
+;     -- 1 input functions                    ; 1     ;
+;     -- 0 input functions                    ; 0     ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 479   ;
+;     -- arithmetic mode                      ; 16    ;
+;     -- qfbk mode                            ; 0     ;
+;     -- register cascade mode                ; 0     ;
+;     -- synchronous clear/load mode          ; 27    ;
+;     -- asynchronous clear/load mode         ; 0     ;
+;                                             ;       ;
+; Total registers                             ; 214   ;
+; Total logic cells in carry chains           ; 17    ;
+; I/O pins                                    ; 165   ;
+; Maximum fan-out node                        ; clk   ;
+; Maximum fan-out                             ; 214   ;
+; Total fan-out                               ; 1974  ;
+; Average fan-out                             ; 2.99  ;
++---------------------------------------------+-------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                             ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------------------+--------------+--------------+
+; Compilation Hierarchy Node ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name             ; Entity Name  ; Library Name ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------------------+--------------+--------------+
+; |IITB_RISC_22              ; 495 (83)    ; 214          ; 0          ; 165  ; 0            ; 281 (83)     ; 167 (0)           ; 47 (0)           ; 17 (0)          ; 0 (0)      ; |IITB_RISC_22                   ; IITB_RISC_22 ; work         ;
+;    |ALU:ALU_en|            ; 21 (21)     ; 0            ; 0          ; 0    ; 0            ; 21 (21)      ; 0 (0)             ; 0 (0)            ; 17 (17)         ; 0 (0)      ; |IITB_RISC_22|ALU:ALU_en        ; ALU          ; work         ;
+;    |FSM:FSM_R|             ; 19 (19)     ; 10           ; 0          ; 0    ; 0            ; 9 (9)        ; 0 (0)             ; 10 (10)          ; 0 (0)           ; 0 (0)      ; |IITB_RISC_22|FSM:FSM_R         ; FSM          ; work         ;
+;    |RegisterFile:RF_R|     ; 275 (275)   ; 128          ; 0          ; 0    ; 0            ; 147 (147)    ; 128 (128)         ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |IITB_RISC_22|RegisterFile:RF_R ; RegisterFile ; work         ;
+;    |Register_16:IR_R|      ; 6 (6)       ; 6            ; 0          ; 0    ; 0            ; 0 (0)        ; 6 (6)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |IITB_RISC_22|Register_16:IR_R  ; Register_16  ; work         ;
+;    |Register_16:PC_R|      ; 16 (16)     ; 16           ; 0          ; 0    ; 0            ; 0 (0)        ; 16 (16)           ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |IITB_RISC_22|Register_16:PC_R  ; Register_16  ; work         ;
+;    |Register_16:T1_R|      ; 16 (16)     ; 16           ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 16 (16)          ; 0 (0)           ; 0 (0)      ; |IITB_RISC_22|Register_16:T1_R  ; Register_16  ; work         ;
+;    |Register_16:T2_R|      ; 16 (16)     ; 16           ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 16 (16)          ; 0 (0)           ; 0 (0)      ; |IITB_RISC_22|Register_16:T2_R  ; Register_16  ; work         ;
+;    |Register_16:T3_R|      ; 16 (16)     ; 16           ; 0          ; 0    ; 0            ; 0 (0)        ; 16 (16)           ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |IITB_RISC_22|Register_16:T3_R  ; Register_16  ; work         ;
+;    |Register_1:C_R|        ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 1 (1)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |IITB_RISC_22|Register_1:C_R    ; Register_1   ; work         ;
+;    |Register_1:Z_R|        ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |IITB_RISC_22|Register_1:Z_R    ; Register_1   ; work         ;
+;    |iptoop:PE_R|           ; 5 (5)       ; 0            ; 0          ; 0    ; 0            ; 5 (5)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |IITB_RISC_22|iptoop:PE_R       ; iptoop       ; work         ;
+;    |memory:memory_R|       ; 20 (20)     ; 4            ; 0          ; 0    ; 0            ; 16 (16)      ; 0 (0)             ; 4 (4)            ; 0 (0)           ; 0 (0)      ; |IITB_RISC_22|memory:memory_R   ; memory       ; work         ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------------------+--------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |IITB_RISC_22|FSM:FSM_R|fsm_state_symbol                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 ;
++----------------------+---------------------+----------------------+----------------------+----------------------+----------------------+---------------------+----------------------+----------------------+----------------------+----------------------+---------------------+----------------------+----------------------+---------------------+---------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+---------------------+
+; Name                 ; fsm_state_symbol.Sf ; fsm_state_symbol.S13 ; fsm_state_symbol.S12 ; fsm_state_symbol.S11 ; fsm_state_symbol.S10 ; fsm_state_symbol.S9 ; fsm_state_symbol.S8B ; fsm_state_symbol.S8A ; fsm_state_symbol.S7B ; fsm_state_symbol.S7A ; fsm_state_symbol.S6 ; fsm_state_symbol.S5B ; fsm_state_symbol.S5A ; fsm_state_symbol.S4 ; fsm_state_symbol.S3 ; fsm_state_symbol.S2B ; fsm_state_symbol.S2A ; fsm_state_symbol.S1B ; fsm_state_symbol.S1A ; fsm_state_symbol.S0B ; fsm_state_symbol.S0A ; fsm_state_symbol.Si ;
++----------------------+---------------------+----------------------+----------------------+----------------------+----------------------+---------------------+----------------------+----------------------+----------------------+----------------------+---------------------+----------------------+----------------------+---------------------+---------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+---------------------+
+; fsm_state_symbol.Si  ; 0                   ; 0                    ; 0                    ; 0                    ; 0                    ; 0                   ; 0                    ; 0                    ; 0                    ; 0                    ; 0                   ; 0                    ; 0                    ; 0                   ; 0                   ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                   ;
+; fsm_state_symbol.S0A ; 0                   ; 0                    ; 0                    ; 0                    ; 0                    ; 0                   ; 0                    ; 0                    ; 0                    ; 0                    ; 0                   ; 0                    ; 0                    ; 0                   ; 0                   ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 1                    ; 1                   ;
+; fsm_state_symbol.S0B ; 0                   ; 0                    ; 0                    ; 0                    ; 0                    ; 0                   ; 0                    ; 0                    ; 0                    ; 0                    ; 0                   ; 0                    ; 0                    ; 0                   ; 0                   ; 0                    ; 0                    ; 0                    ; 0                    ; 1                    ; 0                    ; 1                   ;
+; fsm_state_symbol.S1A ; 0                   ; 0                    ; 0                    ; 0                    ; 0                    ; 0                   ; 0                    ; 0                    ; 0                    ; 0                    ; 0                   ; 0                    ; 0                    ; 0                   ; 0                   ; 0                    ; 0                    ; 0                    ; 1                    ; 0                    ; 0                    ; 1                   ;
+; fsm_state_symbol.S1B ; 0                   ; 0                    ; 0                    ; 0                    ; 0                    ; 0                   ; 0                    ; 0                    ; 0                    ; 0                    ; 0                   ; 0                    ; 0                    ; 0                   ; 0                   ; 0                    ; 0                    ; 1                    ; 0                    ; 0                    ; 0                    ; 1                   ;
+; fsm_state_symbol.S2A ; 0                   ; 0                    ; 0                    ; 0                    ; 0                    ; 0                   ; 0                    ; 0                    ; 0                    ; 0                    ; 0                   ; 0                    ; 0                    ; 0                   ; 0                   ; 0                    ; 1                    ; 0                    ; 0                    ; 0                    ; 0                    ; 1                   ;
+; fsm_state_symbol.S2B ; 0                   ; 0                    ; 0                    ; 0                    ; 0                    ; 0                   ; 0                    ; 0                    ; 0                    ; 0                    ; 0                   ; 0                    ; 0                    ; 0                   ; 0                   ; 1                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 1                   ;
+; fsm_state_symbol.S3  ; 0                   ; 0                    ; 0                    ; 0                    ; 0                    ; 0                   ; 0                    ; 0                    ; 0                    ; 0                    ; 0                   ; 0                    ; 0                    ; 0                   ; 1                   ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 1                   ;
+; fsm_state_symbol.S4  ; 0                   ; 0                    ; 0                    ; 0                    ; 0                    ; 0                   ; 0                    ; 0                    ; 0                    ; 0                    ; 0                   ; 0                    ; 0                    ; 1                   ; 0                   ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 1                   ;
+; fsm_state_symbol.S5A ; 0                   ; 0                    ; 0                    ; 0                    ; 0                    ; 0                   ; 0                    ; 0                    ; 0                    ; 0                    ; 0                   ; 0                    ; 1                    ; 0                   ; 0                   ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 1                   ;
+; fsm_state_symbol.S5B ; 0                   ; 0                    ; 0                    ; 0                    ; 0                    ; 0                   ; 0                    ; 0                    ; 0                    ; 0                    ; 0                   ; 1                    ; 0                    ; 0                   ; 0                   ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 1                   ;
+; fsm_state_symbol.S6  ; 0                   ; 0                    ; 0                    ; 0                    ; 0                    ; 0                   ; 0                    ; 0                    ; 0                    ; 0                    ; 1                   ; 0                    ; 0                    ; 0                   ; 0                   ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 1                   ;
+; fsm_state_symbol.S7A ; 0                   ; 0                    ; 0                    ; 0                    ; 0                    ; 0                   ; 0                    ; 0                    ; 0                    ; 1                    ; 0                   ; 0                    ; 0                    ; 0                   ; 0                   ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 1                   ;
+; fsm_state_symbol.S7B ; 0                   ; 0                    ; 0                    ; 0                    ; 0                    ; 0                   ; 0                    ; 0                    ; 1                    ; 0                    ; 0                   ; 0                    ; 0                    ; 0                   ; 0                   ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 1                   ;
+; fsm_state_symbol.S8A ; 0                   ; 0                    ; 0                    ; 0                    ; 0                    ; 0                   ; 0                    ; 1                    ; 0                    ; 0                    ; 0                   ; 0                    ; 0                    ; 0                   ; 0                   ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 1                   ;
+; fsm_state_symbol.S8B ; 0                   ; 0                    ; 0                    ; 0                    ; 0                    ; 0                   ; 1                    ; 0                    ; 0                    ; 0                    ; 0                   ; 0                    ; 0                    ; 0                   ; 0                   ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 1                   ;
+; fsm_state_symbol.S9  ; 0                   ; 0                    ; 0                    ; 0                    ; 0                    ; 1                   ; 0                    ; 0                    ; 0                    ; 0                    ; 0                   ; 0                    ; 0                    ; 0                   ; 0                   ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 1                   ;
+; fsm_state_symbol.S10 ; 0                   ; 0                    ; 0                    ; 0                    ; 1                    ; 0                   ; 0                    ; 0                    ; 0                    ; 0                    ; 0                   ; 0                    ; 0                    ; 0                   ; 0                   ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 1                   ;
+; fsm_state_symbol.S11 ; 0                   ; 0                    ; 0                    ; 1                    ; 0                    ; 0                   ; 0                    ; 0                    ; 0                    ; 0                    ; 0                   ; 0                    ; 0                    ; 0                   ; 0                   ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 1                   ;
+; fsm_state_symbol.S12 ; 0                   ; 0                    ; 1                    ; 0                    ; 0                    ; 0                   ; 0                    ; 0                    ; 0                    ; 0                    ; 0                   ; 0                    ; 0                    ; 0                   ; 0                   ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 1                   ;
+; fsm_state_symbol.S13 ; 0                   ; 1                    ; 0                    ; 0                    ; 0                    ; 0                   ; 0                    ; 0                    ; 0                    ; 0                    ; 0                   ; 0                    ; 0                    ; 0                   ; 0                   ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 1                   ;
+; fsm_state_symbol.Sf  ; 1                   ; 0                    ; 0                    ; 0                    ; 0                    ; 0                   ; 0                    ; 0                    ; 0                    ; 0                    ; 0                   ; 0                    ; 0                    ; 0                   ; 0                   ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 1                   ;
++----------------------+---------------------+----------------------+----------------------+----------------------+----------------------+---------------------+----------------------+----------------------+----------------------+----------------------+---------------------+----------------------+----------------------+---------------------+---------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+---------------------+
+
+
++----------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                               ;
++-----------------------------------------+----------------------------------------+
+; Register name                           ; Reason for Removal                     ;
++-----------------------------------------+----------------------------------------+
+; FSM:FSM_R|fsm_state_symbol.S0B          ; Lost fanout                            ;
+; memory:memory_R|RAM~53                  ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~69                  ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~85                  ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~101                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~117                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~133                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~149                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~165                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~181                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~197                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~213                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~229                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~245                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~261                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~22                  ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~54                  ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~86                  ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~102                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~118                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~134                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~150                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~166                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~182                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~198                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~214                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~230                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~246                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~262                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~55                  ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~71                  ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~87                  ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~103                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~119                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~135                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~151                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~167                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~183                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~199                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~215                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~231                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~247                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~263                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~24                  ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~40                  ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~56                  ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~88                  ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~104                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~120                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~136                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~152                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~168                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~184                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~200                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~216                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~232                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~248                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~264                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~41                  ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~89                  ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~105                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~121                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~137                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~153                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~169                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~185                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~201                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~217                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~233                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~249                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~265                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~26                  ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~42                  ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~58                  ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~74                  ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~90                  ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~106                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~122                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~138                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~154                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~170                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~186                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~202                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~218                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~234                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~250                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~266                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~27                  ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~75                  ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~91                  ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~107                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~123                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~139                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~155                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~171                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~187                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~203                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~219                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~235                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~251                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~267                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~28                  ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~60                  ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~92                  ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~108                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~124                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~140                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~156                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~172                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~188                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~204                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~220                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~236                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~252                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~268                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~45                  ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~61                  ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~93                  ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~109                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~125                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~141                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~157                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~173                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~189                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~205                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~221                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~237                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~253                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~269                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~30                  ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~62                  ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~94                  ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~110                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~126                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~142                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~158                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~174                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~190                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~206                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~222                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~238                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~254                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~270                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~31                  ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~47                  ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~63                  ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~79                  ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~95                  ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~111                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~127                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~143                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~159                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~175                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~191                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~207                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~223                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~239                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~255                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~271                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~32                  ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~48                  ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~64                  ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~80                  ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~96                  ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~112                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~128                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~144                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~160                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~176                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~192                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~208                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~224                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~240                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~256                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~272                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~65                  ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~81                  ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~97                  ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~113                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~129                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~145                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~161                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~177                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~193                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~209                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~225                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~241                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~257                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~273                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~66                  ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~82                  ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~98                  ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~114                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~130                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~146                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~162                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~178                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~194                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~210                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~226                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~242                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~258                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~274                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~35                  ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~51                  ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~67                  ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~83                  ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~99                  ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~115                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~131                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~147                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~163                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~179                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~195                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~211                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~227                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~243                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~259                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~275                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~36                  ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~52                  ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~68                  ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~84                  ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~100                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~116                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~132                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~148                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~164                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~180                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~196                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~212                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~228                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~244                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~260                 ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~276                 ; Stuck at GND due to stuck port data_in ;
+; FSM:FSM_R|fsm_state_symbol.S13          ; Stuck at GND due to stuck port data_in ;
+; FSM:FSM_R|fsm_state_symbol.S10          ; Stuck at GND due to stuck port data_in ;
+; FSM:FSM_R|fsm_state_symbol.S11          ; Stuck at GND due to stuck port data_in ;
+; FSM:FSM_R|fsm_state_symbol.S12          ; Stuck at GND due to stuck port data_in ;
+; Register_16:IR_R|r[5,10,11,14,15]       ; Stuck at GND due to stuck port data_in ;
+; FSM:FSM_R|fsm_state_symbol.S9           ; Stuck at GND due to stuck port data_in ;
+; FSM:FSM_R|fsm_state_symbol.S4           ; Stuck at GND due to stuck port data_in ;
+; FSM:FSM_R|fsm_state_symbol.S5A          ; Stuck at GND due to stuck port data_in ;
+; FSM:FSM_R|fsm_state_symbol.S6           ; Stuck at GND due to stuck port data_in ;
+; FSM:FSM_R|fsm_state_symbol.S5B          ; Stuck at GND due to stuck port data_in ;
+; memory:memory_R|RAM~33                  ; Merged with memory:memory_R|RAM~21     ;
+; memory:memory_R|RAM~23                  ; Merged with memory:memory_R|RAM~21     ;
+; memory:memory_R|RAM~34                  ; Merged with memory:memory_R|RAM~21     ;
+; memory:memory_R|RAM~25                  ; Merged with memory:memory_R|RAM~21     ;
+; memory:memory_R|RAM~29                  ; Merged with memory:memory_R|RAM~21     ;
+; memory:memory_R|RAM~50                  ; Merged with memory:memory_R|RAM~37     ;
+; memory:memory_R|RAM~43                  ; Merged with memory:memory_R|RAM~37     ;
+; memory:memory_R|RAM~46                  ; Merged with memory:memory_R|RAM~37     ;
+; memory:memory_R|RAM~44                  ; Merged with memory:memory_R|RAM~37     ;
+; memory:memory_R|RAM~39                  ; Merged with memory:memory_R|RAM~37     ;
+; memory:memory_R|RAM~49                  ; Merged with memory:memory_R|RAM~37     ;
+; memory:memory_R|RAM~38                  ; Merged with memory:memory_R|RAM~37     ;
+; memory:memory_R|RAM~72                  ; Merged with memory:memory_R|RAM~70     ;
+; memory:memory_R|RAM~77                  ; Merged with memory:memory_R|RAM~70     ;
+; memory:memory_R|RAM~73                  ; Merged with memory:memory_R|RAM~70     ;
+; memory:memory_R|RAM~78                  ; Merged with memory:memory_R|RAM~70     ;
+; memory:memory_R|RAM~76                  ; Merged with memory:memory_R|RAM~70     ;
+; memory:memory_R|RAM~59                  ; Merged with memory:memory_R|RAM~57     ;
+; Register_16:IR_R|r[2,12,13]             ; Merged with Register_16:IR_R|r[0]      ;
+; Register_16:IR_R|r[7,9]                 ; Merged with Register_16:IR_R|r[1]      ;
+; FSM:FSM_R|fsm_state_symbol.S1A          ; Stuck at GND due to stuck port data_in ;
+; FSM:FSM_R|fsm_state_symbol.S1B          ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 274 ;                                        ;
++-----------------------------------------+----------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                        ;
++--------------------------------+---------------------------+---------------------------------------------------------------------------------------+
+; Register name                  ; Reason for Removal        ; Registers Removed due to This Register                                                ;
++--------------------------------+---------------------------+---------------------------------------------------------------------------------------+
+; memory:memory_R|RAM~35         ; Stuck at GND              ; Register_16:IR_R|r[14], FSM:FSM_R|fsm_state_symbol.S4, FSM:FSM_R|fsm_state_symbol.S6, ;
+;                                ; due to stuck port data_in ; FSM:FSM_R|fsm_state_symbol.S1A, FSM:FSM_R|fsm_state_symbol.S1B                        ;
+; FSM:FSM_R|fsm_state_symbol.S10 ; Stuck at GND              ; FSM:FSM_R|fsm_state_symbol.S11, FSM:FSM_R|fsm_state_symbol.S12                        ;
+;                                ; due to stuck port data_in ;                                                                                       ;
+; memory:memory_R|RAM~53         ; Stuck at GND              ; FSM:FSM_R|fsm_state_symbol.S9                                                         ;
+;                                ; due to stuck port data_in ;                                                                                       ;
+; memory:memory_R|RAM~26         ; Stuck at GND              ; Register_16:IR_R|r[5]                                                                 ;
+;                                ; due to stuck port data_in ;                                                                                       ;
+; memory:memory_R|RAM~31         ; Stuck at GND              ; Register_16:IR_R|r[10]                                                                ;
+;                                ; due to stuck port data_in ;                                                                                       ;
+; memory:memory_R|RAM~32         ; Stuck at GND              ; Register_16:IR_R|r[11]                                                                ;
+;                                ; due to stuck port data_in ;                                                                                       ;
+; memory:memory_R|RAM~65         ; Stuck at GND              ; FSM:FSM_R|fsm_state_symbol.S13                                                        ;
+;                                ; due to stuck port data_in ;                                                                                       ;
+; memory:memory_R|RAM~36         ; Stuck at GND              ; Register_16:IR_R|r[15]                                                                ;
+;                                ; due to stuck port data_in ;                                                                                       ;
+; FSM:FSM_R|fsm_state_symbol.S5A ; Stuck at GND              ; FSM:FSM_R|fsm_state_symbol.S5B                                                        ;
+;                                ; due to stuck port data_in ;                                                                                       ;
++--------------------------------+---------------------------+---------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 214   ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 27    ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 200   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                         ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output               ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------+
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |IITB_RISC_22|FSM:FSM_R|fsm_state_symbol ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |IITB_RISC_22|FSM:FSM_R|fsm_state_symbol ;
+; 4:1                ; 14 bits   ; 28 LEs        ; 28 LEs               ; 0 LEs                  ; No         ; |IITB_RISC_22|M6_out[12]                 ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |IITB_RISC_22|ALU_b[15]                  ;
+; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; No         ; |IITB_RISC_22|M3_out[5]                  ;
+; 4:1                ; 9 bits    ; 18 LEs        ; 18 LEs               ; 0 LEs                  ; No         ; |IITB_RISC_22|M3_out[7]                  ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |IITB_RISC_22|M2_out[2]                  ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |IITB_RISC_22|M11_out[0]                 ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |IITB_RISC_22|ALU_b[1]                   ;
+; 8:1                ; 15 bits   ; 75 LEs        ; 75 LEs               ; 0 LEs                  ; No         ; |IITB_RISC_22|RegisterFile:RF_R|Mux25    ;
+; 8:1                ; 16 bits   ; 80 LEs        ; 80 LEs               ; 0 LEs                  ; No         ; |IITB_RISC_22|RegisterFile:RF_R|Mux11    ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |IITB_RISC_22|ALU_b[7]                   ;
+; 7:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |IITB_RISC_22|iptoop:PE_R|op_addr[2]     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "FSM:FSM_R"                                                                          ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; m80  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; m81  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+    Info: Processing started: Sat May 07 21:42:11 2022
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off IITB_RISC_22 -c IITB_RISC_22
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file memory.vhd
+    Info (12022): Found design unit 1: memory-mem File: D:/DLDCA/updated/cs230_project/cs230_project/Memory.vhd Line: 12
+    Info (12023): Found entity 1: memory File: D:/DLDCA/updated/cs230_project/cs230_project/Memory.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file registerfile.vhd
+    Info (12022): Found design unit 1: RegisterFile-arch File: D:/DLDCA/updated/cs230_project/cs230_project/RegisterFile.vhd Line: 22
+    Info (12023): Found entity 1: RegisterFile File: D:/DLDCA/updated/cs230_project/cs230_project/RegisterFile.vhd Line: 11
+Info (12021): Found 2 design units, including 1 entities, in source file alu.vhd
+    Info (12022): Found design unit 1: ALU-alu_arc File: D:/DLDCA/updated/cs230_project/cs230_project/ALU.vhd Line: 17
+    Info (12023): Found entity 1: ALU File: D:/DLDCA/updated/cs230_project/cs230_project/ALU.vhd Line: 8
+Info (12021): Found 2 design units, including 1 entities, in source file fsm.vhd
+    Info (12022): Found design unit 1: FSM-arch File: D:/DLDCA/updated/cs230_project/cs230_project/FSM.vhd Line: 17
+    Info (12023): Found entity 1: FSM File: D:/DLDCA/updated/cs230_project/cs230_project/FSM.vhd Line: 7
+Info (12021): Found 2 design units, including 1 entities, in source file iitb_risc_22.vhd
+    Info (12022): Found design unit 1: IITB_RISC_22-struct File: D:/DLDCA/updated/cs230_project/cs230_project/IITB_RISC_22.vhd Line: 16
+    Info (12023): Found entity 1: IITB_RISC_22 File: D:/DLDCA/updated/cs230_project/cs230_project/IITB_RISC_22.vhd Line: 7
+Info (12021): Found 2 design units, including 1 entities, in source file register_16.vhd
+    Info (12022): Found design unit 1: Register_16-arch File: D:/DLDCA/updated/cs230_project/cs230_project/Register_16.vhd Line: 14
+    Info (12023): Found entity 1: Register_16 File: D:/DLDCA/updated/cs230_project/cs230_project/Register_16.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file register_1.vhd
+    Info (12022): Found design unit 1: Register_1-arch File: D:/DLDCA/updated/cs230_project/cs230_project/Register_1.vhd Line: 13
+    Info (12023): Found entity 1: Register_1 File: D:/DLDCA/updated/cs230_project/cs230_project/Register_1.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file iptoop.vhd
+    Info (12022): Found design unit 1: iptoop-iptoop_arc File: D:/DLDCA/updated/cs230_project/cs230_project/iptoop.vhd Line: 14
+    Info (12023): Found entity 1: iptoop File: D:/DLDCA/updated/cs230_project/cs230_project/iptoop.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file testbench.vhd
+    Info (12022): Found design unit 1: Testbench-tb File: D:/DLDCA/updated/cs230_project/cs230_project/TestBench.vhd Line: 11
+    Info (12023): Found entity 1: Testbench File: D:/DLDCA/updated/cs230_project/cs230_project/TestBench.vhd Line: 8
+Info (12021): Found 13 design units, including 6 entities, in source file mux.vhd
+    Info (12022): Found design unit 1: MUXes File: D:/DLDCA/updated/cs230_project/cs230_project/mux.vhd Line: 7
+    Info (12022): Found design unit 2: MUX1_2x1-arch File: D:/DLDCA/updated/cs230_project/cs230_project/mux.vhd Line: 75
+    Info (12022): Found design unit 3: MUX1_4x1-arch File: D:/DLDCA/updated/cs230_project/cs230_project/mux.vhd Line: 92
+    Info (12022): Found design unit 4: MUX3_2x1-arch File: D:/DLDCA/updated/cs230_project/cs230_project/mux.vhd Line: 113
+    Info (12022): Found design unit 5: MUX3_4x1-arch File: D:/DLDCA/updated/cs230_project/cs230_project/mux.vhd Line: 139
+    Info (12022): Found design unit 6: MUX16_2x1-arch File: D:/DLDCA/updated/cs230_project/cs230_project/mux.vhd Line: 165
+    Info (12022): Found design unit 7: MUX16_4x1-arch File: D:/DLDCA/updated/cs230_project/cs230_project/mux.vhd Line: 191
+    Info (12023): Found entity 1: MUX1_2x1 File: D:/DLDCA/updated/cs230_project/cs230_project/mux.vhd Line: 68
+    Info (12023): Found entity 2: MUX1_4x1 File: D:/DLDCA/updated/cs230_project/cs230_project/mux.vhd Line: 85
+    Info (12023): Found entity 3: MUX3_2x1 File: D:/DLDCA/updated/cs230_project/cs230_project/mux.vhd Line: 105
+    Info (12023): Found entity 4: MUX3_4x1 File: D:/DLDCA/updated/cs230_project/cs230_project/mux.vhd Line: 131
+    Info (12023): Found entity 5: MUX16_2x1 File: D:/DLDCA/updated/cs230_project/cs230_project/mux.vhd Line: 157
+    Info (12023): Found entity 6: MUX16_4x1 File: D:/DLDCA/updated/cs230_project/cs230_project/mux.vhd Line: 183
+Info (12127): Elaborating entity "IITB_RISC_22" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at IITB_RISC_22.vhd(68): object "M8_out" assigned a value but never read File: D:/DLDCA/updated/cs230_project/cs230_project/IITB_RISC_22.vhd Line: 68
+Warning (10541): VHDL Signal Declaration warning at IITB_RISC_22.vhd(67): used implicit default value for signal "M10_out" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: D:/DLDCA/updated/cs230_project/cs230_project/IITB_RISC_22.vhd Line: 67
+Warning (10492): VHDL Process Statement warning at IITB_RISC_22.vhd(164): signal "IR_out" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/DLDCA/updated/cs230_project/cs230_project/IITB_RISC_22.vhd Line: 164
+Warning (10492): VHDL Process Statement warning at IITB_RISC_22.vhd(166): signal "PE_out" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/DLDCA/updated/cs230_project/cs230_project/IITB_RISC_22.vhd Line: 166
+Warning (10492): VHDL Process Statement warning at IITB_RISC_22.vhd(169): signal "M21" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/DLDCA/updated/cs230_project/cs230_project/IITB_RISC_22.vhd Line: 169
+Warning (10492): VHDL Process Statement warning at IITB_RISC_22.vhd(171): signal "M20" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/DLDCA/updated/cs230_project/cs230_project/IITB_RISC_22.vhd Line: 171
+Warning (10492): VHDL Process Statement warning at IITB_RISC_22.vhd(173): signal "IR_out" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/DLDCA/updated/cs230_project/cs230_project/IITB_RISC_22.vhd Line: 173
+Warning (10492): VHDL Process Statement warning at IITB_RISC_22.vhd(175): signal "IR_out" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/DLDCA/updated/cs230_project/cs230_project/IITB_RISC_22.vhd Line: 175
+Warning (10492): VHDL Process Statement warning at IITB_RISC_22.vhd(179): signal "M20" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/DLDCA/updated/cs230_project/cs230_project/IITB_RISC_22.vhd Line: 179
+Warning (10492): VHDL Process Statement warning at IITB_RISC_22.vhd(181): signal "IR_out" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/DLDCA/updated/cs230_project/cs230_project/IITB_RISC_22.vhd Line: 181
+Warning (10492): VHDL Process Statement warning at IITB_RISC_22.vhd(183): signal "PE_out" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/DLDCA/updated/cs230_project/cs230_project/IITB_RISC_22.vhd Line: 183
+Warning (10492): VHDL Process Statement warning at IITB_RISC_22.vhd(188): signal "M31" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/DLDCA/updated/cs230_project/cs230_project/IITB_RISC_22.vhd Line: 188
+Warning (10492): VHDL Process Statement warning at IITB_RISC_22.vhd(190): signal "M30" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/DLDCA/updated/cs230_project/cs230_project/IITB_RISC_22.vhd Line: 190
+Warning (10492): VHDL Process Statement warning at IITB_RISC_22.vhd(192): signal "T3_out" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/DLDCA/updated/cs230_project/cs230_project/IITB_RISC_22.vhd Line: 192
+Warning (10492): VHDL Process Statement warning at IITB_RISC_22.vhd(194): signal "Imm9e16" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/DLDCA/updated/cs230_project/cs230_project/IITB_RISC_22.vhd Line: 194
+Warning (10492): VHDL Process Statement warning at IITB_RISC_22.vhd(198): signal "M30" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/DLDCA/updated/cs230_project/cs230_project/IITB_RISC_22.vhd Line: 198
+Warning (10492): VHDL Process Statement warning at IITB_RISC_22.vhd(200): signal "T2_out" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/DLDCA/updated/cs230_project/cs230_project/IITB_RISC_22.vhd Line: 200
+Warning (10492): VHDL Process Statement warning at IITB_RISC_22.vhd(202): signal "PC_out" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/DLDCA/updated/cs230_project/cs230_project/IITB_RISC_22.vhd Line: 202
+Warning (10492): VHDL Process Statement warning at IITB_RISC_22.vhd(207): signal "M4" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/DLDCA/updated/cs230_project/cs230_project/IITB_RISC_22.vhd Line: 207
+Warning (10492): VHDL Process Statement warning at IITB_RISC_22.vhd(209): signal "ALU_c" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/DLDCA/updated/cs230_project/cs230_project/IITB_RISC_22.vhd Line: 209
+Warning (10492): VHDL Process Statement warning at IITB_RISC_22.vhd(211): signal "T2_out" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/DLDCA/updated/cs230_project/cs230_project/IITB_RISC_22.vhd Line: 211
+Warning (10492): VHDL Process Statement warning at IITB_RISC_22.vhd(214): signal "M5" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/DLDCA/updated/cs230_project/cs230_project/IITB_RISC_22.vhd Line: 214
+Warning (10492): VHDL Process Statement warning at IITB_RISC_22.vhd(216): signal "D1_out" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/DLDCA/updated/cs230_project/cs230_project/IITB_RISC_22.vhd Line: 216
+Warning (10492): VHDL Process Statement warning at IITB_RISC_22.vhd(218): signal "ALU_c" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/DLDCA/updated/cs230_project/cs230_project/IITB_RISC_22.vhd Line: 218
+Warning (10492): VHDL Process Statement warning at IITB_RISC_22.vhd(221): signal "M61" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/DLDCA/updated/cs230_project/cs230_project/IITB_RISC_22.vhd Line: 221
+Warning (10492): VHDL Process Statement warning at IITB_RISC_22.vhd(223): signal "M60" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/DLDCA/updated/cs230_project/cs230_project/IITB_RISC_22.vhd Line: 223
+Warning (10492): VHDL Process Statement warning at IITB_RISC_22.vhd(225): signal "D2_out" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/DLDCA/updated/cs230_project/cs230_project/IITB_RISC_22.vhd Line: 225
+Warning (10492): VHDL Process Statement warning at IITB_RISC_22.vhd(227): signal "LS1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/DLDCA/updated/cs230_project/cs230_project/IITB_RISC_22.vhd Line: 227
+Warning (10492): VHDL Process Statement warning at IITB_RISC_22.vhd(231): signal "M60" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/DLDCA/updated/cs230_project/cs230_project/IITB_RISC_22.vhd Line: 231
+Warning (10492): VHDL Process Statement warning at IITB_RISC_22.vhd(233): signal "D1_out" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/DLDCA/updated/cs230_project/cs230_project/IITB_RISC_22.vhd Line: 233
+Warning (10492): VHDL Process Statement warning at IITB_RISC_22.vhd(235): signal "memory_out" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/DLDCA/updated/cs230_project/cs230_project/IITB_RISC_22.vhd Line: 235
+Warning (10492): VHDL Process Statement warning at IITB_RISC_22.vhd(240): signal "M7" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/DLDCA/updated/cs230_project/cs230_project/IITB_RISC_22.vhd Line: 240
+Warning (10492): VHDL Process Statement warning at IITB_RISC_22.vhd(242): signal "memory_out" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/DLDCA/updated/cs230_project/cs230_project/IITB_RISC_22.vhd Line: 242
+Warning (10492): VHDL Process Statement warning at IITB_RISC_22.vhd(244): signal "ALU_c" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/DLDCA/updated/cs230_project/cs230_project/IITB_RISC_22.vhd Line: 244
+Warning (10492): VHDL Process Statement warning at IITB_RISC_22.vhd(247): signal "M81" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/DLDCA/updated/cs230_project/cs230_project/IITB_RISC_22.vhd Line: 247
+Warning (10492): VHDL Process Statement warning at IITB_RISC_22.vhd(249): signal "M80" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/DLDCA/updated/cs230_project/cs230_project/IITB_RISC_22.vhd Line: 249
+Warning (10492): VHDL Process Statement warning at IITB_RISC_22.vhd(251): signal "T1_out" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/DLDCA/updated/cs230_project/cs230_project/IITB_RISC_22.vhd Line: 251
+Warning (10492): VHDL Process Statement warning at IITB_RISC_22.vhd(253): signal "PC_out" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/DLDCA/updated/cs230_project/cs230_project/IITB_RISC_22.vhd Line: 253
+Warning (10492): VHDL Process Statement warning at IITB_RISC_22.vhd(257): signal "M80" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/DLDCA/updated/cs230_project/cs230_project/IITB_RISC_22.vhd Line: 257
+Warning (10492): VHDL Process Statement warning at IITB_RISC_22.vhd(259): signal "T2_out" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/DLDCA/updated/cs230_project/cs230_project/IITB_RISC_22.vhd Line: 259
+Warning (10492): VHDL Process Statement warning at IITB_RISC_22.vhd(261): signal "D1_out" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/DLDCA/updated/cs230_project/cs230_project/IITB_RISC_22.vhd Line: 261
+Warning (10492): VHDL Process Statement warning at IITB_RISC_22.vhd(266): signal "M91" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/DLDCA/updated/cs230_project/cs230_project/IITB_RISC_22.vhd Line: 266
+Warning (10492): VHDL Process Statement warning at IITB_RISC_22.vhd(268): signal "M90" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/DLDCA/updated/cs230_project/cs230_project/IITB_RISC_22.vhd Line: 268
+Warning (10492): VHDL Process Statement warning at IITB_RISC_22.vhd(270): signal "T2_out" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/DLDCA/updated/cs230_project/cs230_project/IITB_RISC_22.vhd Line: 270
+Warning (10492): VHDL Process Statement warning at IITB_RISC_22.vhd(276): signal "M90" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/DLDCA/updated/cs230_project/cs230_project/IITB_RISC_22.vhd Line: 276
+Warning (10492): VHDL Process Statement warning at IITB_RISC_22.vhd(278): signal "SEImm6" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/DLDCA/updated/cs230_project/cs230_project/IITB_RISC_22.vhd Line: 278
+Warning (10492): VHDL Process Statement warning at IITB_RISC_22.vhd(280): signal "SEImm9" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/DLDCA/updated/cs230_project/cs230_project/IITB_RISC_22.vhd Line: 280
+Warning (10492): VHDL Process Statement warning at IITB_RISC_22.vhd(285): signal "M10" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/DLDCA/updated/cs230_project/cs230_project/IITB_RISC_22.vhd Line: 285
+Warning (10492): VHDL Process Statement warning at IITB_RISC_22.vhd(287): signal "T1_out" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/DLDCA/updated/cs230_project/cs230_project/IITB_RISC_22.vhd Line: 287
+Warning (10492): VHDL Process Statement warning at IITB_RISC_22.vhd(289): signal "T2_out" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/DLDCA/updated/cs230_project/cs230_project/IITB_RISC_22.vhd Line: 289
+Warning (10492): VHDL Process Statement warning at IITB_RISC_22.vhd(293): signal "M111" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/DLDCA/updated/cs230_project/cs230_project/IITB_RISC_22.vhd Line: 293
+Warning (10492): VHDL Process Statement warning at IITB_RISC_22.vhd(295): signal "M110" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/DLDCA/updated/cs230_project/cs230_project/IITB_RISC_22.vhd Line: 295
+Warning (10492): VHDL Process Statement warning at IITB_RISC_22.vhd(297): signal "PC_out" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/DLDCA/updated/cs230_project/cs230_project/IITB_RISC_22.vhd Line: 297
+Warning (10492): VHDL Process Statement warning at IITB_RISC_22.vhd(299): signal "T3_out" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/DLDCA/updated/cs230_project/cs230_project/IITB_RISC_22.vhd Line: 299
+Warning (10492): VHDL Process Statement warning at IITB_RISC_22.vhd(303): signal "M110" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/DLDCA/updated/cs230_project/cs230_project/IITB_RISC_22.vhd Line: 303
+Warning (10492): VHDL Process Statement warning at IITB_RISC_22.vhd(305): signal "ALU_c" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/DLDCA/updated/cs230_project/cs230_project/IITB_RISC_22.vhd Line: 305
+Warning (10492): VHDL Process Statement warning at IITB_RISC_22.vhd(307): signal "T1_out" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/DLDCA/updated/cs230_project/cs230_project/IITB_RISC_22.vhd Line: 307
+Info (12128): Elaborating entity "iptoop" for hierarchy "iptoop:PE_R" File: D:/DLDCA/updated/cs230_project/cs230_project/IITB_RISC_22.vhd Line: 81
+Info (12128): Elaborating entity "FSM" for hierarchy "FSM:FSM_R" File: D:/DLDCA/updated/cs230_project/cs230_project/IITB_RISC_22.vhd Line: 89
+Warning (10492): VHDL Process Statement warning at FSM.vhd(65): signal "memory" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/DLDCA/updated/cs230_project/cs230_project/FSM.vhd Line: 65
+Warning (10492): VHDL Process Statement warning at FSM.vhd(67): signal "memory" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/DLDCA/updated/cs230_project/cs230_project/FSM.vhd Line: 67
+Warning (10492): VHDL Process Statement warning at FSM.vhd(69): signal "memory" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/DLDCA/updated/cs230_project/cs230_project/FSM.vhd Line: 69
+Warning (10492): VHDL Process Statement warning at FSM.vhd(71): signal "memory" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/DLDCA/updated/cs230_project/cs230_project/FSM.vhd Line: 71
+Warning (10492): VHDL Process Statement warning at FSM.vhd(73): signal "memory" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/DLDCA/updated/cs230_project/cs230_project/FSM.vhd Line: 73
+Warning (10492): VHDL Process Statement warning at FSM.vhd(212): signal "PC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/DLDCA/updated/cs230_project/cs230_project/FSM.vhd Line: 212
+Warning (10492): VHDL Process Statement warning at FSM.vhd(234): signal "PC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/DLDCA/updated/cs230_project/cs230_project/FSM.vhd Line: 234
+Info (12128): Elaborating entity "Register_16" for hierarchy "Register_16:PC_R" File: D:/DLDCA/updated/cs230_project/cs230_project/IITB_RISC_22.vhd Line: 98
+Info (12128): Elaborating entity "memory" for hierarchy "memory:memory_R" File: D:/DLDCA/updated/cs230_project/cs230_project/IITB_RISC_22.vhd Line: 103
+Info (12128): Elaborating entity "RegisterFile" for hierarchy "RegisterFile:RF_R" File: D:/DLDCA/updated/cs230_project/cs230_project/IITB_RISC_22.vhd Line: 118
+Info (12128): Elaborating entity "Register_1" for hierarchy "Register_1:C_R" File: D:/DLDCA/updated/cs230_project/cs230_project/IITB_RISC_22.vhd Line: 141
+Info (12128): Elaborating entity "ALU" for hierarchy "ALU:ALU_en" File: D:/DLDCA/updated/cs230_project/cs230_project/IITB_RISC_22.vhd Line: 154
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "IR[5]" is stuck at GND File: D:/DLDCA/updated/cs230_project/cs230_project/IITB_RISC_22.vhd Line: 9
+    Warning (13410): Pin "IR[10]" is stuck at GND File: D:/DLDCA/updated/cs230_project/cs230_project/IITB_RISC_22.vhd Line: 9
+    Warning (13410): Pin "IR[11]" is stuck at GND File: D:/DLDCA/updated/cs230_project/cs230_project/IITB_RISC_22.vhd Line: 9
+    Warning (13410): Pin "IR[14]" is stuck at GND File: D:/DLDCA/updated/cs230_project/cs230_project/IITB_RISC_22.vhd Line: 9
+    Warning (13410): Pin "IR[15]" is stuck at GND File: D:/DLDCA/updated/cs230_project/cs230_project/IITB_RISC_22.vhd Line: 9
+Info (17049): 1 registers lost all their fanouts during netlist optimizations.
+Info (21057): Implemented 660 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 2 input pins
+    Info (21059): Implemented 163 output pins
+    Info (21061): Implemented 495 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 71 warnings
+    Info: Peak virtual memory: 4759 megabytes
+    Info: Processing ended: Sat May 07 21:42:21 2022
+    Info: Elapsed time: 00:00:10
+    Info: Total CPU time (on all processors): 00:00:23
+
+

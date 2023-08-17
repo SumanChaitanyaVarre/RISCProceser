@@ -1,0 +1,25 @@
+
+State Machine - |IITB_RISC_22|FSM:FSM_R|fsm_state_symbol
+Name fsm_state_symbol.Sf fsm_state_symbol.S13 fsm_state_symbol.S12 fsm_state_symbol.S11 fsm_state_symbol.S10 fsm_state_symbol.S9 fsm_state_symbol.S8B fsm_state_symbol.S8A fsm_state_symbol.S7B fsm_state_symbol.S7A fsm_state_symbol.S6 fsm_state_symbol.S5B fsm_state_symbol.S5A fsm_state_symbol.S4 fsm_state_symbol.S3 fsm_state_symbol.S2B fsm_state_symbol.S2A fsm_state_symbol.S1B fsm_state_symbol.S1A fsm_state_symbol.S0B fsm_state_symbol.S0A fsm_state_symbol.Si 
+fsm_state_symbol.Si 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+fsm_state_symbol.S0A 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+fsm_state_symbol.S0B 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+fsm_state_symbol.S1A 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+fsm_state_symbol.S1B 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+fsm_state_symbol.S2A 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+fsm_state_symbol.S2B 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+fsm_state_symbol.S3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+fsm_state_symbol.S4 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+fsm_state_symbol.S5A 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+fsm_state_symbol.S5B 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+fsm_state_symbol.S6 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+fsm_state_symbol.S7A 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+fsm_state_symbol.S7B 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+fsm_state_symbol.S8A 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+fsm_state_symbol.S8B 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+fsm_state_symbol.S9 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+fsm_state_symbol.S10 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+fsm_state_symbol.S11 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+fsm_state_symbol.S12 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+fsm_state_symbol.S13 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+fsm_state_symbol.Sf 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 

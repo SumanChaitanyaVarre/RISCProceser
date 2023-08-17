@@ -1,0 +1,293 @@
+m255
+K4
+z2
+!s11e vcom 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/DLDCA/updated/cs230_project/cs230_project/simulation/modelsim
+Ealu
+Z1 w1651772151
+Z2 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
+Z3 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z4 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 4
+R0
+Z5 8D:/DLDCA/updated/cs230_project/cs230_project/ALU.vhd
+Z6 FD:/DLDCA/updated/cs230_project/cs230_project/ALU.vhd
+l0
+L8 1
+VFSmAbBZI@KGENIoiaL;UU3
+!s100 PA1kzBA40VLnz4n=>`1AV2
+Z7 OV;C;2020.1;71
+31
+Z8 !s110 1651934594
+!i10b 1
+Z9 !s108 1651934594.000000
+Z10 !s90 -reportprogress|300|-93|-work|work|D:/DLDCA/updated/cs230_project/cs230_project/ALU.vhd|
+Z11 !s107 D:/DLDCA/updated/cs230_project/cs230_project/ALU.vhd|
+!i113 1
+Z12 o-93 -work work
+Z13 tExplicit 1 CvgOpt 0
+Aalu_arc
+R2
+R3
+R4
+DEx4 work 3 alu 0 22 FSmAbBZI@KGENIoiaL;UU3
+!i122 4
+l19
+L17 29
+V1jfYn8dBQ_hWb:69CdUnM0
+!s100 h;=`S@2AaHW@aB^QEnLOd2
+R7
+31
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13
+Efsm
+Z14 w1651932867
+R3
+R4
+!i122 5
+R0
+Z15 8D:/DLDCA/updated/cs230_project/cs230_project/FSM.vhd
+Z16 FD:/DLDCA/updated/cs230_project/cs230_project/FSM.vhd
+l0
+L7 1
+VUOmjOHak@@k[NQF22AVeN2
+!s100 c;b@e>FShQ04a_n?DdoL21
+R7
+31
+R8
+!i10b 1
+R9
+Z17 !s90 -reportprogress|300|-93|-work|work|D:/DLDCA/updated/cs230_project/cs230_project/FSM.vhd|
+Z18 !s107 D:/DLDCA/updated/cs230_project/cs230_project/FSM.vhd|
+!i113 1
+R12
+R13
+Aarch
+R3
+R4
+DEx4 work 3 fsm 0 22 UOmjOHak@@k[NQF22AVeN2
+!i122 5
+l22
+L17 321
+VEG`N8fBCS9IT6L7hl?:Z[1
+!s100 o6jKSdBdV@VWL;_?CJCZz3
+R7
+31
+R8
+!i10b 1
+R9
+R17
+R18
+!i113 1
+R12
+R13
+Eiitb_risc_22
+w1651934535
+R3
+R4
+!i122 6
+R0
+8D:/DLDCA/updated/cs230_project/cs230_project/IITB_RISC_22.vhd
+FD:/DLDCA/updated/cs230_project/cs230_project/IITB_RISC_22.vhd
+l0
+L7 1
+VfiYfCc62V5aKmkX[;PUK?3
+!s100 NH3?2R=`zO31fF73R5QmY3
+R7
+31
+R8
+!i10b 1
+R9
+!s90 -reportprogress|300|-93|-work|work|D:/DLDCA/updated/cs230_project/cs230_project/IITB_RISC_22.vhd|
+!s107 D:/DLDCA/updated/cs230_project/cs230_project/IITB_RISC_22.vhd|
+!i113 1
+R12
+R13
+Eiptoop
+Z19 w1651806596
+R2
+R3
+R4
+!i122 1
+R0
+Z20 8D:/DLDCA/updated/cs230_project/cs230_project/iptoop.vhd
+Z21 FD:/DLDCA/updated/cs230_project/cs230_project/iptoop.vhd
+l0
+L5 1
+V4[o7HcA5Wk=6`RUG39D540
+!s100 cC5;iP73V6`fOISV87TJ31
+R7
+31
+R8
+!i10b 1
+R9
+Z22 !s90 -reportprogress|300|-93|-work|work|D:/DLDCA/updated/cs230_project/cs230_project/iptoop.vhd|
+Z23 !s107 D:/DLDCA/updated/cs230_project/cs230_project/iptoop.vhd|
+!i113 1
+R12
+R13
+Aiptoop_arc
+R2
+R3
+R4
+DEx4 work 6 iptoop 0 22 4[o7HcA5Wk=6`RUG39D540
+!i122 1
+l15
+L14 41
+VdBZ4;[hh8B]AfIH?ZfD?m3
+!s100 6c<FIi0J<c:2[k[o<i^ek2
+R7
+31
+R8
+!i10b 1
+R9
+R22
+R23
+!i113 1
+R12
+R13
+Ememory
+Z24 w1651771727
+R2
+R3
+R4
+!i122 0
+R0
+Z25 8D:/DLDCA/updated/cs230_project/cs230_project/Memory.vhd
+Z26 FD:/DLDCA/updated/cs230_project/cs230_project/Memory.vhd
+l0
+L5 1
+V?DE<SBgfhBam32?BSHV[=0
+!s100 NHjZmM@EIAgX49X=Z?M9X3
+R7
+31
+R8
+!i10b 1
+R9
+Z27 !s90 -reportprogress|300|-93|-work|work|D:/DLDCA/updated/cs230_project/cs230_project/Memory.vhd|
+Z28 !s107 D:/DLDCA/updated/cs230_project/cs230_project/Memory.vhd|
+!i113 1
+R12
+R13
+Amem
+R2
+R3
+R4
+DEx4 work 6 memory 0 22 ?DE<SBgfhBam32?BSHV[=0
+!i122 0
+l15
+L12 14
+V3NSWOf1n<oT5YjRWT^1^c0
+!s100 :^EAggVC[4_l9<jhQHDQ`1
+R7
+31
+R8
+!i10b 1
+R9
+R27
+R28
+!i113 1
+R12
+R13
+Eregisterfile
+Z29 w1651771902
+Z30 DPx4 ieee 18 std_logic_unsigned 0 22 ;eZjO2D4ZDz<]0>8AL<ne1
+Z31 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
+R2
+R3
+R4
+!i122 3
+R0
+Z32 8D:/DLDCA/updated/cs230_project/cs230_project/RegisterFile.vhd
+Z33 FD:/DLDCA/updated/cs230_project/cs230_project/RegisterFile.vhd
+l0
+L11 1
+VCWf44]e<e=DTlfeOV6^N?1
+!s100 al1>KikcbgKfl=>mQQX5J3
+R7
+31
+R8
+!i10b 1
+R9
+Z34 !s90 -reportprogress|300|-93|-work|work|D:/DLDCA/updated/cs230_project/cs230_project/RegisterFile.vhd|
+Z35 !s107 D:/DLDCA/updated/cs230_project/cs230_project/RegisterFile.vhd|
+!i113 1
+R12
+R13
+Aarch
+R30
+R31
+R2
+R3
+R4
+DEx4 work 12 registerfile 0 22 CWf44]e<e=DTlfeOV6^N?1
+!i122 3
+l27
+L22 28
+VVk:DA:EHTWobhT8A>]YNC1
+!s100 QUEO`Bk>Lg4JzP01Z_WX01
+R7
+31
+R8
+!i10b 1
+R9
+R34
+R35
+!i113 1
+R12
+R13
+Etestbench
+Z36 w1651934409
+Z37 DPx4 ieee 16 std_logic_textio 0 22 ^l:n6VFdg74Q?CKDhjD]D3
+R3
+R4
+!i122 2
+R0
+Z38 8D:/DLDCA/updated/cs230_project/cs230_project/TestBench.vhd
+Z39 FD:/DLDCA/updated/cs230_project/cs230_project/TestBench.vhd
+l0
+L8 1
+V=6;`fA2PI^3_cj2MUA`Y]3
+!s100 4MW^bb:ImIeClM5`0S=0=1
+R7
+31
+R8
+!i10b 1
+R9
+Z40 !s90 -reportprogress|300|-93|-work|work|D:/DLDCA/updated/cs230_project/cs230_project/TestBench.vhd|
+Z41 !s107 D:/DLDCA/updated/cs230_project/cs230_project/TestBench.vhd|
+!i113 1
+R12
+R13
+Atb
+R37
+R3
+R4
+DEx4 work 9 testbench 0 22 =6;`fA2PI^3_cj2MUA`Y]3
+!i122 2
+l32
+L11 43
+VI>6@CJnE1oJ6a59^ONH;R3
+!s100 c7;B7=S4Q11c2;Doz4df_3
+R7
+31
+R8
+!i10b 1
+R9
+R40
+R41
+!i113 1
+R12
+R13

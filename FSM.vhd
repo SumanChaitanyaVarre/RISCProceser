@@ -1,0 +1,336 @@
+-- Component: The Finite State Machine
+library work;
+use work.all;
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity FSM is
+	port (IR, T1, T2, memory    : in std_logic_vector(15 downto 0);
+		rst, clk, init_carry, PC, init_zero : in std_logic;
+		PC_Write, memory_Write, IR_Write, Reg_Write, T3_Write, T2_Write, T1_Write,
+		M1, M20, M21, M30, M31, M4,
+		M5, M60, M61, M7, M80, M81,
+		M90, M91, M10, M110, M111,
+		carry_write, zero_write, done, alu_control : out std_logic );
+end entity;
+
+architecture arch of FSM is
+
+	type StateSymbol is (Si, S0A, S0B, S1A, S1B, S2A, S2B, S3, S4, S5A, S5B, S6, S7A, S7B, S8A, S8B, S9, S10, S11, S12, S13, Sf);
+	signal fsm_state_symbol : StateSymbol;
+
+begin
+	process (rst, clk, IR, init_carry, init_zero, T1, T2, fsm_state_symbol)
+		variable PC_Write_temp, memory_Write_temp, IR_Write_temp, Reg_Write_temp, T3_Write_temp, T2_Write_temp, T1_Write_temp,
+		M1_temp, M20_temp, M21_temp, M4_temp, M30_temp, M31_temp, M60_temp, M61_temp, M5_temp,
+		M7_temp, M80_temp, M81_temp, M90_temp, M91_temp, M10_temp, M110_temp,M111_temp,
+		carry_temp, zero_temp, done_temp, alu_temp : std_logic;
+		variable state_temp : StateSymbol;
+
+	begin
+		state_temp := fsm_state_symbol;
+		PC_Write_temp := '0';
+		memory_Write_temp := '0';
+		IR_Write_temp := '0';
+		Reg_Write_temp := '0';
+		T1_Write_temp := '0';
+		T2_Write_temp := '0';
+		T3_Write_temp := '0';
+		M1_temp := '0';
+		M20_temp := '1';
+		M21_temp := '0';
+		M4_temp := '0';
+		M30_temp := '0';
+		M31_temp := '0';
+		M60_temp := '0';
+		M61_temp := '0';
+		M5_temp := '0';
+		M7_temp := '0';
+		M80_temp := '0';
+		M81_temp := '0';
+		M90_temp := '0';
+		M91_temp := '0';
+		M10_temp := '0';
+		M110_temp := '0';
+		M111_temp := '0';
+		carry_temp := '0';
+		zero_temp := '0';
+		done_temp := '0';
+		alu_temp := '0';
+		case fsm_state_symbol is
+			when Si =>
+				IR_Write_temp := '1';
+				M20_temp := '0';
+				M21_temp := '0';
+				if (memory(15 downto 12) = "0000") then --ADI LHI
+					state_temp := S3;
+				elsif (memory(15 downto 12) = "1001" or memory(15 downto 12) = "1010") then --JAL and JLR
+					state_temp := S10;
+				elsif (memory(15 downto 12) = "1011") then --JRI
+					state_temp := S13;
+				elsif (memory(15 downto 12) = "1111") then
+					state_temp := Si;
+				elsif (memory(15 downto 12) = "0000") then 
+					state_temp := S0B;
+				else
+					state_temp := S0A;
+				end if;
+			when S0A =>
+				T1_Write_temp := '1';
+				T2_Write_temp := '1';
+				M1_temp := '0';
+				M60_temp := '0';
+				M61_temp := '0';
+				M5_temp := '0';
+				if (IR(15 downto 14) = "01") then --LW SW
+					state_temp := S4;
+				elsif ((IR(15 downto 12) = "0001" or IR(15 downto 12) = "0010")
+					and ((IR(1 downto 0) = "10" and init_carry = '1') or (IR(1 downto 0) = "01" and init_zero = '1') or (IR(1 downto 0) = "00"))) then
+					state_temp := S1A;
+				elsif (IR(15 downto 12) = "0000") then
+					state_temp := S2A;
+				elsif (IR(15 downto 12) = "1000" and (T1 = T2)) then
+					state_temp := S9;
+				elsif (IR(15 downto 12) = "1101") then
+					state_temp := S7A;
+				elsif (IR(15 downto 12) = "1100") then
+					state_temp := S8A;
+				else
+					state_temp := Sf;
+				end if;
+         when S0B =>
+			    T1_Write_temp:= '1';
+				 T2_Write_temp := '1';
+				 M1_temp := '0';
+				 M5_temp := '0';
+				 M60_temp := '1';
+				 M61_temp := '0';
+				 if (IR(15 downto 12) = "0000") then
+				   state_temp := S1A;
+				 else
+				   state_temp := Sf;
+				 end if;
+			when S1A =>
+				T3_Write_temp := '1';
+				M80_temp := '0';
+				M81_temp := '0';
+				M90_temp := '0';
+				M91_temp := '0';
+				M7_temp := '1';
+				if (IR(15 downto 12) = "0001") then
+					carry_temp := '1';
+				end if;
+				zero_temp := '1';
+				if (IR(15 downto 12) = "0010") then
+					alu_temp := '1';
+				else
+					alu_temp := '0';
+				end if;
+				state_temp := S1B;
+			when S1B =>
+				Reg_Write_temp := '1';
+				M20_temp := '0';
+				M21_temp := '0';
+				M30_temp := '0';
+				M31_temp := '0';
+				state_temp := Sf;
+			when S2A =>
+				T3_Write_temp := '1';
+				M80_temp := '0';
+				M81_temp := '0';
+				M90_temp := '0';
+				M91_temp := '1';
+				M7_temp := '1';
+				carry_temp := '1';
+				zero_temp := '1';
+				state_temp := S2B;
+			when S2B =>
+				Reg_Write_temp := '1';
+				M20_temp := '1';
+				M21_temp := '0';
+				M30_temp := '0';
+				M31_temp := '0';
+				state_temp := Sf;
+			when S3 =>
+				Reg_Write_temp := '1';
+				M30_temp := '1';
+				M31_temp := '0';
+				M20_temp := '0';
+				M21_temp := '1';
+				state_temp := Sf;
+			when S4 =>
+				T3_Write_temp := '1';
+				M80_temp := '0';
+				M81_temp := '1';
+				M90_temp := '0';
+				M91_temp := '1';
+				M7_temp := '1';
+				if (IR(15 downto 12) = "0101") then
+					state_temp := S5A;
+				else
+					state_temp := S6;
+				end if;
+			when S5A =>
+				T2_Write_temp := '1';
+				M60_temp := '1';
+				M61_temp := '1';
+				M111_temp := '0';
+				M110_temp := '1';
+				zero_temp := '1';
+				state_temp := S5B;
+			when S5B =>
+				Reg_Write_temp := '1';
+				M20_temp := '0';
+				M21_temp := '1';
+				M30_temp := '0';
+				M31_temp := '1';
+				state_temp := Sf;
+			when S6 =>
+				memory_Write_temp := '1';
+				M10_temp := '0';
+				M110_temp := '1';
+				M111_temp := '0';
+				state_temp := Sf;
+			when S7A =>
+				T2_Write_temp := '1';
+				M10_temp := '0';
+				M61_temp := '1';
+            M60_temp := '1';
+				state_temp := S7B;
+			when S7B =>
+				Reg_Write_temp := '1';
+				T1_Write_temp := '1';
+				M90_temp := '1';
+				M91_temp := '0';
+				M30_temp := '0';
+				M31_temp := '1';
+				M80_temp := '0';
+				M81_temp := '0';
+				M20_temp := '1';
+				M21_temp := '1';
+				M5_temp := '1';
+				if (PC = '0') then
+					state_temp := Sf;
+				else
+					state_temp := S7A;
+				end if;
+			when S8A =>
+				T2_Write_temp := '1';
+				M1_temp := '1';
+				M60_temp := '0';
+				M61_temp := '1';
+				state_temp := S8B;
+			when S8B =>
+				memory_Write_temp := '1';
+				T1_Write_temp := '1';
+				M80_temp := '0';
+				M81_temp := '0';
+				M5_temp := '1';
+				M90_temp := '1';
+				M91_temp := '0';
+				M10_temp := '1';
+				M110_temp := '1';
+				M111_temp := '1';
+				if ( PC = '0') then
+					state_temp := Sf;
+				else
+					state_temp := S8A;
+				end if;
+			when S9 =>
+				PC_Write_temp := '1';
+				M1_temp := '0';
+				M4_temp := '0';
+				M80_temp := '1';
+				M81_temp := '0';
+				M91_temp := '1';
+				M90_temp := '0';
+				state_temp := Si;
+				done_temp := '1';
+			when S10 =>
+				Reg_Write_temp := '1';
+				T2_Write_temp := '1';
+				M20_temp := '0';
+				M21_temp := '1';
+				M30_temp := '1';
+				M31_temp := '1';
+				M60_temp := '0';
+				M61_temp := '0';
+				if (IR(15 downto 12) = "1001") then
+					state_temp := S11;
+				else
+					state_temp := S12;
+				end if;
+			when S11 =>
+				PC_Write_temp := '1';
+				M4_temp := '0';
+				M90_temp := '1';
+				M91_temp := '1';
+				M81_temp := '0';
+				M80_temp := '1';
+				state_temp := Si;
+				done_temp := '1';
+			when S12 =>
+				PC_Write_temp := '1';
+				M4_temp := '1';
+				state_temp := Si;
+				done_temp := '1';
+         when S13 =>
+			   PC_Write_temp := '1';
+				M90_temp := '1';
+				M91_temp := '1';
+				M80_temp := '1';
+				M81_temp := '1';
+				M4_temp := '0';
+				M1_temp := '0';
+				state_temp := Si;
+				done_temp := '1';
+			when Sf =>
+				PC_Write_temp := '1';
+				M4_temp := '0';
+				M90_temp := '1';
+				M91_temp := '0';
+				M80_temp := '1';
+				M81_temp := '0';
+				state_temp := Si;
+				done_temp := '1';
+			when others => null;
+		end case;
+		PC_Write <= PC_Write_temp;
+		memory_Write <= memory_Write_temp;
+		IR_Write <= IR_Write_temp;
+		Reg_Write <= Reg_Write_temp;
+		T1_Write <= T1_Write_temp;
+		T2_Write <= T2_Write_temp;
+		T3_Write <= T3_Write_temp;
+		M1 <= M1_temp;
+		M20 <= M20_temp;
+		M21 <= M21_temp;
+		M4 <= M4_temp;
+		M30 <= M30_temp;
+		M31 <= M31_temp;
+		M5 <= M5_temp;
+		M60 <= M60_temp;
+		M61 <= M61_temp;
+		M7 <= M7_temp;
+		M80 <= M80_temp;
+		M81 <= M81_temp;
+		M90 <= M90_temp;
+		M91 <= M91_temp;
+		M110 <= M110_temp;
+		M111 <= M111_temp;
+		M10 <= M10_temp;
+		carry_write <= carry_temp;
+		zero_write <= zero_temp;
+		done <= done_temp;
+		alu_control <= alu_temp;
+		if (rising_edge(clk)) then
+			if (rst = '1') then
+				fsm_state_symbol <= Si;
+			else
+				fsm_state_symbol <= state_temp;
+			end if;
+		end if;
+
+	end process;
+
+end architecture;

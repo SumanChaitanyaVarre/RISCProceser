@@ -1,0 +1,125 @@
+# Reading pref.tcl
+# ERROR: No extended dataflow license exists
+# do IITB_RISC_22_run_msim_rtl_vhdl.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Copying C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {D:/DLDCA/updated/cs230_project/cs230_project/Memory.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 20:13:14 on May 07,2022
+# vcom -reportprogress 300 -93 -work work D:/DLDCA/updated/cs230_project/cs230_project/Memory.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity memory
+# -- Compiling architecture mem of memory
+# End time: 20:13:14 on May 07,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/DLDCA/updated/cs230_project/cs230_project/iptoop.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 20:13:14 on May 07,2022
+# vcom -reportprogress 300 -93 -work work D:/DLDCA/updated/cs230_project/cs230_project/iptoop.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity iptoop
+# -- Compiling architecture iptoop_arc of iptoop
+# End time: 20:13:14 on May 07,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/DLDCA/updated/cs230_project/cs230_project/TestBench.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 20:13:14 on May 07,2022
+# vcom -reportprogress 300 -93 -work work D:/DLDCA/updated/cs230_project/cs230_project/TestBench.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_textio
+# -- Compiling entity Testbench
+# -- Compiling architecture tb of Testbench
+# End time: 20:13:14 on May 07,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/DLDCA/updated/cs230_project/cs230_project/RegisterFile.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 20:13:14 on May 07,2022
+# vcom -reportprogress 300 -93 -work work D:/DLDCA/updated/cs230_project/cs230_project/RegisterFile.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity RegisterFile
+# -- Compiling architecture arch of RegisterFile
+# End time: 20:13:14 on May 07,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/DLDCA/updated/cs230_project/cs230_project/ALU.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 20:13:14 on May 07,2022
+# vcom -reportprogress 300 -93 -work work D:/DLDCA/updated/cs230_project/cs230_project/ALU.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity ALU
+# -- Compiling architecture alu_arc of ALU
+# End time: 20:13:14 on May 07,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/DLDCA/updated/cs230_project/cs230_project/FSM.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 20:13:14 on May 07,2022
+# vcom -reportprogress 300 -93 -work work D:/DLDCA/updated/cs230_project/cs230_project/FSM.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity FSM
+# -- Compiling architecture arch of FSM
+# End time: 20:13:14 on May 07,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/DLDCA/updated/cs230_project/cs230_project/IITB_RISC_22.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 20:13:14 on May 07,2022
+# vcom -reportprogress 300 -93 -work work D:/DLDCA/updated/cs230_project/cs230_project/IITB_RISC_22.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity IITB_RISC_22
+# -- Compiling architecture struct of IITB_RISC_22
+# ** Error (suppressible): D:/DLDCA/updated/cs230_project/cs230_project/IITB_RISC_22.vhd(211): (vcom-1339) Case statement choices cover only 2 out of 9 cases.
+# ** Error (suppressible): D:/DLDCA/updated/cs230_project/cs230_project/IITB_RISC_22.vhd(213): (vcom-1339) Case statement choices cover only 2 out of 9 cases.
+# ** Error (suppressible): D:/DLDCA/updated/cs230_project/cs230_project/IITB_RISC_22.vhd(221): (vcom-1339) Case statement choices cover only 2 out of 9 cases.
+# ** Error (suppressible): D:/DLDCA/updated/cs230_project/cs230_project/IITB_RISC_22.vhd(230): (vcom-1339) Case statement choices cover only 2 out of 9 cases.
+# ** Error (suppressible): D:/DLDCA/updated/cs230_project/cs230_project/IITB_RISC_22.vhd(232): (vcom-1339) Case statement choices cover only 2 out of 9 cases.
+# ** Error (suppressible): D:/DLDCA/updated/cs230_project/cs230_project/IITB_RISC_22.vhd(240): (vcom-1339) Case statement choices cover only 2 out of 9 cases.
+# ** Error (suppressible): D:/DLDCA/updated/cs230_project/cs230_project/IITB_RISC_22.vhd(249): (vcom-1339) Case statement choices cover only 2 out of 9 cases.
+# ** Error (suppressible): D:/DLDCA/updated/cs230_project/cs230_project/IITB_RISC_22.vhd(256): (vcom-1339) Case statement choices cover only 2 out of 9 cases.
+# ** Error (suppressible): D:/DLDCA/updated/cs230_project/cs230_project/IITB_RISC_22.vhd(263): (vcom-1339) Case statement choices cover only 2 out of 9 cases.
+# ** Error (suppressible): D:/DLDCA/updated/cs230_project/cs230_project/IITB_RISC_22.vhd(265): (vcom-1339) Case statement choices cover only 2 out of 9 cases.
+# ** Error (suppressible): D:/DLDCA/updated/cs230_project/cs230_project/IITB_RISC_22.vhd(273): (vcom-1339) Case statement choices cover only 2 out of 9 cases.
+# ** Error (suppressible): D:/DLDCA/updated/cs230_project/cs230_project/IITB_RISC_22.vhd(282): (vcom-1339) Case statement choices cover only 2 out of 9 cases.
+# ** Error (suppressible): D:/DLDCA/updated/cs230_project/cs230_project/IITB_RISC_22.vhd(289): (vcom-1339) Case statement choices cover only 2 out of 9 cases.
+# ** Error (suppressible): D:/DLDCA/updated/cs230_project/cs230_project/IITB_RISC_22.vhd(291): (vcom-1339) Case statement choices cover only 2 out of 9 cases.
+# ** Error (suppressible): D:/DLDCA/updated/cs230_project/cs230_project/IITB_RISC_22.vhd(299): (vcom-1339) Case statement choices cover only 2 out of 9 cases.
+# ** Error (suppressible): D:/DLDCA/updated/cs230_project/cs230_project/IITB_RISC_22.vhd(308): (vcom-1339) Case statement choices cover only 2 out of 9 cases.
+# ** Error (suppressible): D:/DLDCA/updated/cs230_project/cs230_project/IITB_RISC_22.vhd(310): (vcom-1339) Case statement choices cover only 2 out of 9 cases.
+# ** Error (suppressible): D:/DLDCA/updated/cs230_project/cs230_project/IITB_RISC_22.vhd(318): (vcom-1339) Case statement choices cover only 2 out of 9 cases.
+# ** Error (suppressible): D:/DLDCA/updated/cs230_project/cs230_project/IITB_RISC_22.vhd(327): (vcom-1339) Case statement choices cover only 2 out of 9 cases.
+# ** Error (suppressible): D:/DLDCA/updated/cs230_project/cs230_project/IITB_RISC_22.vhd(335): (vcom-1339) Case statement choices cover only 2 out of 9 cases.
+# ** Error (suppressible): D:/DLDCA/updated/cs230_project/cs230_project/IITB_RISC_22.vhd(337): (vcom-1339) Case statement choices cover only 2 out of 9 cases.
+# ** Error (suppressible): D:/DLDCA/updated/cs230_project/cs230_project/IITB_RISC_22.vhd(345): (vcom-1339) Case statement choices cover only 2 out of 9 cases.
+# ** Note: D:/DLDCA/updated/cs230_project/cs230_project/IITB_RISC_22.vhd(366): VHDL Compiler exiting
+# End time: 20:13:14 on May 07,2022, Elapsed time: 0:00:00
+# Errors: 22, Warnings: 0
+# ** Error: C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/vcom failed.
+# Error in macro ./IITB_RISC_22_run_msim_rtl_vhdl.do line 14
+# C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/vcom failed.
+#     while executing
+# "vcom -93 -work work {D:/DLDCA/updated/cs230_project/cs230_project/IITB_RISC_22.vhd}"
